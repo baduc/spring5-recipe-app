@@ -24,7 +24,7 @@ public class IngredientServiceImpl implements IngredientService {
 	}
 
 	@Override
-	public IngredientCommand findByRecipeIdAndId(Long recipeId, Long ingredientId) {
+	public IngredientCommand findByRecipeIdAndIngredientId(Long recipeId, Long ingredientId) {
 		Optional<Recipe> recipeOptional = recipeRepository.findById(recipeId);
 		if (!recipeOptional.isPresent()) {
 			log.error("Recipe id not found: " + ingredientId);

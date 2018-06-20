@@ -57,14 +57,14 @@ public class IngredientControllerTest {
 		command.setId(1l);
 		command.setRecipeId(2l);
 		
-		when(ingredientService.findByRecipeIdAndId(2l, 1l)).thenReturn(command);
+		when(ingredientService.findByRecipeIdAndIngredientId(2l, 1l)).thenReturn(command);
 		
 		mockMvc.perform(get("/recipe/2/ingredient/1/show"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("recipe/ingredient/show"))
 			.andExpect(model().attributeExists("ingredient"));
 		
-		verify(ingredientService, times(1)).findByRecipeIdAndId(2l, 1l);
+		verify(ingredientService, times(1)).findByRecipeIdAndIngredientId(2l, 1l);
 	}
 
 }
