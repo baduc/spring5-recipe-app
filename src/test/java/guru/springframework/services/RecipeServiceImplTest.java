@@ -57,7 +57,7 @@ public class RecipeServiceImplTest {
     public void getRecipesTest() throws Exception {
 
         Recipe recipe = new Recipe();
-        HashSet receipesData = new HashSet();
+        HashSet<Recipe> receipesData = new HashSet<Recipe>();
         receipesData.add(recipe);
 
         when(recipeService.getRecipes()).thenReturn(receipesData);
