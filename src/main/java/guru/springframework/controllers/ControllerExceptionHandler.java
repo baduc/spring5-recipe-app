@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ControllerExceptionHandler {
 
     @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public ModelAndView handleNotFound(Exception ex) {
         log.error("Handling NotFoundException");
         log.error(ex.getMessage());
